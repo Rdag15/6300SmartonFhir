@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FHIR App</title>
+    <link href="{% static '/css/jquery-ui.css' %}" rel="stylesheet">
+    <link href="{% static '/css/jquery-ui.theme.css' %}" rel="stylesheet">
+    <link href="{% static '/css/jquery-ui.structure.css' %}" rel="stylesheet">
+    <link href="{% static '/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/mystyle.css' %}">
+
+</head>
+
+<body class="grid">
+    <div class="container-fluid rounded" id="info-bg" style="width:96%; height:100%">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn2"><i class="fa fa-home"></i> Home</button>
+                <button class="btn2"><i class="fa fa-bars"></i> Menu</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <a href="#"><img src="{% static '/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg' %}" class="img-responsive"
+                        style="width:100%;"></a>
+            </div>
+            <div class="col-3">
+                <strong>Name:</strong> John Doe<br>
+                <strong>DOB:</strong> 01/01/1980 <br>
+                <strong>Gender:</strong> M <br>
+                <strong>Address:</strong> 1234 Place Rd, Town, State 00000 <br>
+                <strong>Phone Number:</strong> 555-555-5555 <br>
+                <strong>Email:</strong> JohnDoe@WebsiteMail.com <br>
+                <strong>Attending:</strong> Dr. Doctor <br>
+                <strong>Visit Date:</strong> 07/21/21
+            </div>
+        </div>
+        <div class="row">
+            <!--   <div class="column">
+            <button type="button" class="btn btn-primary">Medication</button>
+            <button type="button" class="btn btn-danger">Allergies</button>
+            <button type="button" class="btn btn-info">Labs</button>
+            <button type="button" class="btn btn-info">CPOE</button>
+            <button type="button" class="btn btn-info">Vitals</button>
+            <button type="button" class="btn btn-light">Information</button>
+            <button type="button" class="btn btn-light">Billing</button>
+            <button type="button" class="btn btn-light">Admin</button>
+        </div> -->
+            <div class="row">
+                <div class="col-4">
+                    Medications
+                    <button type="button" class="btn-light, medadd">Add</button>
+                    <ol id="medlist">
+                    </ol>
+                </div>
+                <div class="col-4">
+                    Problem
+                    <button id="opener">Add</button>
+                    <ol id="problist">
+                    </ol>
+                </div>
+                <div class="col-4">
+                    Messages
+                    <button type="button" class="btn-light, messageadd">Add</button>
+                    <ol id="messlist">
+                    </ol>
+                </div>
+            </div>
+
+            <div id="dialog-confirm" class="modal" style="display:none">
+                <form>
+                    <label for="fname">Problem:</label>
+                    <input type="text" id="fname" name="fname" tabindex="0" z-index="5000">
+                </form>
+                <button id="probbuttton">Add</button>
+            </div>
+        </div>
+
+        <script src="{% static '/js/jquery.min.js' %}"></script>
+        <script src="{% static '/js/bootstrap.min.js' %}"></script>
+        <script src="{% static '/js/jquery-ui.js' %}"></script>
+        <script src="{% static '/js/add-to-list.js' %}"></script>
+        <footer>
+            <div class="container-fluid center">
+                <button type="button" class="btn btn-link">Copyright</button>
+                <button type="button" class="btn btn-link">Help</button>
+                <button type="button" class="btn btn-link">Contact Us</button>
+                <button type="button" class="btn btn-link">About</button>
+            </div>
+        </footer>
+</body>
+
+</html>
+
