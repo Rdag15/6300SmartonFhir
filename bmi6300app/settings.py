@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import mimetypes
 import os
 from pathlib import Path
 
@@ -27,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+
+mimetypes.add_type("text/css", ".css", True)
+mimetypes.add_type("text/js", ".js", True)
 
 # Application definition
 
