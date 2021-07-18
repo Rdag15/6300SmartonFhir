@@ -22,3 +22,4 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('patient/<int:pat_id>/', views.patient, name='patient')
 ]
+
