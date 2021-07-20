@@ -1,5 +1,6 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
+from django.template.response import TemplateResponse
 
 from .models import medications
 # Create your views here.
@@ -13,4 +14,4 @@ def patient(request, pat_id):
     return HttpResponse(f'<p>patient view with id (pat_id)</p>')
 
 def launch(request):
-    return HttpResponse(request, 'launch.html', {})
+    return TemplateResponse(request, 'launch.html', {})
