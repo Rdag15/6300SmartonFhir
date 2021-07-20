@@ -13,4 +13,4 @@ def patient(request, pat_id):
     return HttpResponse(f'<p>patient view with id (pat_id)</p>')
 
 def launch(request):
-    return TemplateResponse(request, 'launch.html', {})
+    return HttpResponse(request, 'launch.html', {})
