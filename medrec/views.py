@@ -15,3 +15,6 @@ def patient(request, pat_id):
 
 def launch(request):
     return TemplateResponse(request, 'launch.html', {})
+
+def base(request):
+    return TemplateResponse(request, 'base.html', {})
