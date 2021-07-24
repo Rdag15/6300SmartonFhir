@@ -24,12 +24,6 @@
 <body class="grid">
     <div class="container-fluid rounded" id="info-bg" style="width:96%; height:100%">
         <div class="row">
-            <div class="col-12">
-                <button class="btn2"><i class="fa fa-home"></i> Home</button>
-                <button class="btn2"><i class="fa fa-bars"></i> Menu</button>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-1">
                 <a href="#"><img src="{% static '/images/jurica-koletic-7YVZYZeITc8-unsplash.jpg' %}"
                         class="img-responsive" style="width:100%;"></a>
@@ -43,36 +37,6 @@
                 <strong>Email:</strong> JohnDoe@WebsiteMail.com <br>
                 <strong>Attending:</strong> Dr. Doctor <br>
                 <strong>Visit Date:</strong> 07/21/21
-            </div>
-        </div>
-        <div class="row">
-            <div class="row">
-                <div class="col-4">
-                    Medications
-                    <button type="button" class="btn-light, medadd">Add</button>
-                    <ol id="medlist">
-                    </ol>
-                </div>
-                <div class="col-4">
-                    Problem
-                    <button id="opener">Add</button>
-                    <ol id="problist">
-                    </ol>
-                </div>
-                <div class="col-4">
-                    Messages
-                    <button type="button" class="btn-light, messageadd">Add</button>
-                    <ol id="messlist">
-                    </ol>
-                </div>
-            </div>
-
-            <div id="dialog-confirm" class="modal" style="display:none">
-                <form>
-                    <label for="fname">Problem:</label>
-                    <input type="text" id="fname" name="fname" tabindex="0" z-index="5000">
-                </form>
-                <button id="probbuttton">Add</button>
             </div>
         </div>
         <table id = "medication-table" class = "display">
@@ -93,12 +57,6 @@
         <script src="{% static '/js/add-to-list.js' %}" type="text/javascript"></script>
         <script src="{% static '/js/homescript.js' %}" type="text/javascript"></script>
         <footer>
-            <div class="container-fluid center">
-                <button type="button" class="btn btn-link">Copyright</button>
-                <button type="button" class="btn btn-link">Help</button>
-                <button type="button" class="btn btn-link">Contact Us</button>
-                <button type="button" class="btn btn-link">About</button>
-            </div>
         </footer>
 </body>
 

@@ -1,7 +1,7 @@
 function get_medication(json_data) {
     $.ajax({
         url: "/medications/",
-        type: 'POST',
+        type: 'GET',
         data: JSON.stringify(json_data),
         contentType:'application/json; charset=utf-8',
         dataType: "json",
