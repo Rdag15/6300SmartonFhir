@@ -6,7 +6,6 @@ from django.http import JsonResponse
 import json
 import requests
 import traceback
-from .models import medications
 # Create your views here.
 def home(request):
     return render(request, "home.html", {})
