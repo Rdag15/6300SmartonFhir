@@ -67,3 +67,4 @@ $(document).on('keypress', 'input', function (e) {
     }
 
 });
+

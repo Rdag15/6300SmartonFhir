@@ -24,7 +24,7 @@ function onReady(smart) {
         json_data.baseURL = baseURL;
     
     // custom js method to make the fhir queries
-    // the method is descri bed in app-script.js
+    // the method is described in app-script.js
     get_medications(json_data);
 }
 //start here
