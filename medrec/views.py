@@ -53,6 +53,7 @@ def medications(request):
             #each item in output must be a dict with table columns as key
             # JSON processing of the data, and generate json object as object
             i = 0
+            
             while i < 10:
                 row = {"medication": "Med" + str(i), "start": "Start " + str(i),
                 "quantity": "Quantity " + str(i)}
@@ -61,7 +62,7 @@ def medications(request):
         else: 
             #error message
             output = {"error":r.headers["Status"]}
-        return JsonResponse(output, safe=False)
+        return JsonResponse(data, safe=False)
     except:
         e = traceback.format_exc()
         data = {"error": str(e)}
