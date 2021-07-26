@@ -53,11 +53,12 @@ def medications(request):
             #each item in output must be a dict with table columns as key
             # JSON processing of the data, and generate json object as object
             i = 0
-            print(data)
+            
             while i < 10:
                 row = {"medication": "Med" + str(i), "start": "Start " + str(i),
                 "quantity": "Quantity " + str(i)}
                 output.append(row)
+                output.append(data)
                 i += 1
         else: 
             #error message
