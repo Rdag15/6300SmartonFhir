@@ -28,18 +28,14 @@ def medications(request):
     # we will now build our request for data
     # Fhir endpoint obtained from EHR vendor
     fhir_endpoint = input["baseURL"]
-     
     #let the fhir endpoint know we are accepting only JSON data
     headers = {'Accept': 'application/json',
                'Authorization': "Bearer " + input["token"]}
-
     #build query -resource + parameters
     resource = "MedicationStatement"
     parameters = {"patient": input["patient"]}
-
     #format the query url. Print it to see if there are any problems
     query_url = fhir_endpoint + "/" + resource
-
     #make get request
     try:
         r = requests.get(query_url, params=parameters, headers=headers)
@@ -49,16 +45,13 @@ def medications(request):
             data = r.json()
             # json output corresponding for each row
             output = [] #store rows
-
             #each item in output must be a dict with table columns as key
             # JSON processing of the data, and generate json object as object
             i = 0
-            
             while i < 10:
-                row = {"medication": "Med" + str(i), "start": "Start " + str(i),
+                row = {"medication": "Med" + str(i), "start": "Start " + str(data),
                 "quantity": "Quantity " + str(i)}
                 output.append(row)
-                output.append(data)
                 i += 1
         else: 
             #error message
