@@ -24,5 +24,5 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('patient/<int:pat_id>/', views.patient, name='patient'),
     path('launch', views.launch, name="launch"),
-    path('medications', views.medications, name="medications")
+    path('medications/', views.medications, name="medications")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
