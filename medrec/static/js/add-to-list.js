@@ -11,6 +11,7 @@ $(".medadd").on('click', function () {
         document.getElementById("medlist").appendChild(li);
     }
 });
+
 $(".messageadd").on('click', function () {
     var probtext = "";
     var inputs = prompt("please enter a message");
@@ -24,9 +25,6 @@ $(".messageadd").on('click', function () {
         document.getElementById("messlist").appendChild(li);
     }
 });
-
-
-
 
 $(function () {
         $("#opener").on("click", function () {
@@ -67,4 +65,3 @@ $(document).on('keypress', 'input', function (e) {
     }
 
 });
-
