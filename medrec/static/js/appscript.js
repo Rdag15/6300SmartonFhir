@@ -10,7 +10,7 @@ function get_medications(json_data) {
             // send the data to datatables 
             // This is not actually something I will use?
             $('#medication-table').DataTable({
-            "data":data,
+            "data": data,
             "columns":[
                 {"data":"medication"},
                 {"data": "start"},

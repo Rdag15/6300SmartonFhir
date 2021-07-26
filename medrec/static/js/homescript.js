@@ -2,19 +2,19 @@ function onError(data) {
     $('body').append(JSON.stringify(data));
 }
 
-function onReady(smart) {
+function onReady(SMART) {
     // Page receives access token from auth server
     // use the access token, and start fetching patient data
     // access token valid for 10 min
 
     //access token
-    var token = smart.tokenResponse.access_token;
+    var token = SMART.tokenResponse.access_token;
 
     //patient ID
-    var patient = smart.tokenResponse.patient;
+    var patient = SMART.tokenResponse.patient;
 
     //FHIR endpoint
-    var baseURL = smart.server.serviceUrl;
+    var baseURL = SMART.server.serviceUrl;
 
     //start the app workflow
     // pass the access_token, patient ID, fhir endpoint

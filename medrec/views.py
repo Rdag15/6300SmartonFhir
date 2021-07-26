@@ -20,7 +20,6 @@ def base(request):
     return TemplateResponse(request, 'base.html', {})
 
 @csrf_exempt
-# the above comment is in the example but seems weird
 def medications(request):
     #input variable will take in json_data from js file
     input = json.loads(request.body)
@@ -65,4 +64,4 @@ def medications(request):
     except:
         e = traceback.format_exc()
         data = {"error": str(e)}
-        return JsonResponse(e)
+        return JsonResponse(data)
