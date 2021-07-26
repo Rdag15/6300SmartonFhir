@@ -1,4 +1,4 @@
-function get_medication(json_data) {
+function get_medications(json_data) {
     $.ajax({
         url: "/medications/",
         type: 'POST',
