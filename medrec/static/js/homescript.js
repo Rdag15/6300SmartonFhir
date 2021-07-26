@@ -33,7 +33,4 @@ function onReady(client) {
 //start here
 //when page is laoded the index receives code
 // this fhir function, exchanges code for access token
-FHIR.oauth2.ready()
-    .then(client => {onReady(client)})
-    .then(console.log)
-    .catch(console.error);
+FHIR.oauth2.ready().then(onReady).catch(onError);
