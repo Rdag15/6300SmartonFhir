@@ -1,3 +1,5 @@
+
+
 function onError(data) {
     $('body').append(JSON.stringify(data));
 }
@@ -32,6 +34,6 @@ function onReady(client) {
 //when page is laoded the index receives code
 // this fhir function, exchanges code for access token
 FHIR.oauth2.ready()
-    .then(onReady(client))
+    .then(client => {onReady(client)})
     .then(console.log)
     .catch(console.error);
