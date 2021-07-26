@@ -30,7 +30,8 @@ def medications(request):
     fhir_endpoint = input["baseURL"]
      
     #let the fhir endpoint know we are accepting only JSON data
-    headers = {'Accept': 'application/json+fhir', 'Authorization':"Bearer "+ input("token")}
+    headers = {'Accept': 'application/json+fhir',
+               'Authorization': "Bearer " + input["token"]}
 
     #build query -resource + parameters
     resource = "MedicationStatement"
