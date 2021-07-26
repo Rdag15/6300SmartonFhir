@@ -6,16 +6,16 @@ function onReady(smart) {
     // Page receives access token from auth server
     // use the access token, and start fetching patient data
     // access token valid for 10 min
-
+    console.log("This is onready");
     //access token
     var token = smart.tokenResponse.access_token;
-
+    console.log(token);
     //patient ID
     var patient = smart.tokenResponse.patient;
-
+    console.log(patient);
     //FHIR endpoint
     var baseURL = smart.server.serviceUrl;
-
+    console.log(baseURL);
     //start the app workflow
     // pass the access_token, patient ID, fhir endpoint
     var json_data = {};
