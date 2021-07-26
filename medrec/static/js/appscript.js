@@ -3,7 +3,7 @@ function get_medications(json_data) {
         url: "/medications/",
         type: 'POST',
         data: JSON.stringify(json_data),
-        contentType:'application/json+fhir; charset=utf-8',
+        contentType:'application/json; charset=utf-8',
         dataType: "json",
         success: function(data){
             //data contains the json object for the data table
