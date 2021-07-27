@@ -49,8 +49,8 @@ def medications(request):
             # JSON processing of the data, and generate json object as object
             i = 0
             while i < 10:
-                row = {"medication": "Med" + str(i), "start": "Start " + str(data),
-                "quantity": "Quantity " + str(i)}
+                row = {"medication": str(data), "start": str(data["entry"]),
+                "quantity": str(data["resourceType"])}
                 output.append(row)
                 i += 1
         else: 
