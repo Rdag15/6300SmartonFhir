@@ -6,7 +6,6 @@ from django.http import JsonResponse
 import json
 import requests
 import traceback
-
 # Create your views here.
 def home(request):
     return render(request, "home.html", {})
@@ -50,8 +49,8 @@ def medications(request):
             # JSON processing of the data, and generate json object as object
             i = 0
             while i < 10:
-                row = {"medication": str(data["div"]), "start": str(data["entry"]),
-                "quantity": str(data["Medication Name:"])}
+                row = {"medication": str(data), "start": str(data["entry"]),
+                "quantity": str(data["resourceType"])}
                 output.append(row)
                 i += 1
         else: 
