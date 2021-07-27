@@ -42,14 +42,14 @@ def medications(request):
         #now load the json data for procvessing
         if (r.status_code == 200):
             #success 
-            data = r.json()
+            jsonfile = r.json()
             # json output corresponding for each row
             output = [] #store rows
             #each item in output must be a dict with table columns as key
             # JSON processing of the data, and generate json object as object
-            for jsonEntries in range(len(data['entry'])):
-                row = {"medication": str(data["entry"]), "start": str(data["entry"][jsonEntries]),
-                "quantity": str(data["resourceType"])}
+            for jsonEntries in range(len(jsonfile['entry'])):
+                row = {"medication": str(jsonfile["entry"][jsonEntries]["resource"]["medicationCodeableConcept"]["text"]), "start": str(jsonfile["entry"][jsonEntries]["resource"]["effectivePeriod"]["start"]),
+                       "quantity": str(jsonfile["entry"][jsonEntries]["resource"]["dosage"][0]["text"])}
                 output.append(row)
         else: 
             #error message
