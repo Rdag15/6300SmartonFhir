@@ -47,12 +47,10 @@ def medications(request):
             output = [] #store rows
             #each item in output must be a dict with table columns as key
             # JSON processing of the data, and generate json object as object
-            i = 0
-            while i < 10:
-                row = {"medication": str(data), "start": str(data["entry"]),
+            for jsonEntries in range(len(data['entry'])):
+                row = {"medication": str(data["entry"]), "start": str(data["entry"][jsonEntries]),
                 "quantity": str(data["resourceType"])}
                 output.append(row)
-                i += 1
         else: 
             #error message
             output = {"error":r.headers["Status"]}
