@@ -48,9 +48,12 @@ def medications(request):
             #each item in output must be a dict with table columns as key
             # JSON processing of the data, and generate json object as object
             for jsonEntries in range(len(jsonfile['entry'])):
-                row = {"medication": str(jsonfile["entry"][jsonEntries]["resource"]["medicationCodeableConcept"]["text"]), "start": str(jsonfile["entry"][jsonEntries]["resource"]["effectivePeriod"]["start"]),
-                       "quantity": str(jsonfile["entry"][jsonEntries]["resource"]["dosage"][0]["text"])}
-                output.append(row)
+                try:
+                    row = {"medication": str(jsonfile["entry"][jsonEntries]["resource"]["medicationCodeableConcept"]["text"]), "start": str(jsonfile["entry"][jsonEntries]["resource"]["effectivePeriod"]["start"]),
+                           "quantity": str(jsonfile["entry"][jsonEntries]["resource"]["dosage"][0]["text"])}
+                    output.append(row)
+                except:
+                    continue
         else: 
             #error message
             output = {"error":r.headers["Status"]}
