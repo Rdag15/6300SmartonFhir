@@ -49,7 +49,7 @@ def medications(request):
             # JSON processing of the data, and generate json object as object
             for jsonEntries in range(len(jsonfile['entry'])):
                 try:
-                    row = {"medication": str(jsonfile.get("text")), "start": str(jsonfile.get("start")),
+                    row = {"medication": str(jsonfile["entry"][jsonEntries]["resource"]["medicationCodeableConcept"]["text"]), "start": str(jsonfile["entry"][jsonEntries]["resource"]["effectivePeriod"]["start"]),
                            "quantity": str(jsonfile["entry"][jsonEntries]["resource"]["dosage"][0]["text"])}
                     output.append(row)
                 except:
