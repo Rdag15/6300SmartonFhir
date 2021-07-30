@@ -50,7 +50,7 @@ def medications(request):
             for jsonEntries in range(len(jsonfile['entry'])):
                 try:
                     row = {"medication": str(jsonfile.get("text")), "start": str(jsonfile.get("start")),
-                           "quantity": str(jsonfile.get("dosage"/0/"text"))}
+                           "quantity": str(jsonfile.get("dosage"))}
                     output.append(row)
                 except:
                     continue
