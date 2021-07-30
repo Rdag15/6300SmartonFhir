@@ -1,5 +1,3 @@
-
-
 function onError(data) {
     $('body').append(JSON.stringify(data));
 }
@@ -12,13 +10,10 @@ function onReady(client) {
     //access token
     var smart = client.getState(); 
     var token = smart.tokenResponse.access_token;
-    console.log(token);
     //patient ID
     var patient = smart.tokenResponse.patient;
-    console.log(patient);
     //FHIR endpoint
     var baseURL = smart.serverUrl;
-    console.log(baseURL);
     //start the app workflow
     // pass the access_token, patient ID, fhir endpoint
     var json_data = {};
@@ -30,7 +25,6 @@ function onReady(client) {
     // the method is described in app-script.js
     get_medications(json_data);
 }
-//start here
 //when page is laoded the index receives code
 // this fhir function, exchanges code for access token
 FHIR.oauth2.ready().then(onReady).catch(onError);

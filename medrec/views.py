@@ -6,6 +6,7 @@ from django.http import JsonResponse
 import json
 import requests
 import traceback
+
 # Create your views here.
 def home(request):
     return render(request, "home.html", {})
@@ -23,9 +24,8 @@ def base(request):
 def medications(request):
     #input variable will take in json_data from js file
     input = json.loads(request.body)
-
-    #our input variables contains, FHIR endpoint, Patient ID and Access token
-    # we will now build our request for data
+    # Our input variables contains, FHIR endpoint, Patient ID and Access token
+    # We will now build our request for data
     # Fhir endpoint obtained from EHR vendor
     fhir_endpoint = input["baseURL"]
     #let the fhir endpoint know we are accepting only JSON data
@@ -49,7 +49,7 @@ def medications(request):
             # JSON processing of the data, and generate json object as object
             for jsonEntries in range(len(jsonfile['entry'])):
                 try:
-                    row = {"medication": str(jsonfile["entry"][jsonEntries]["resource"]["medicationCodeableConcept"]["text"]), "start": str(jsonfile["entry"][jsonEntries]["resource"]["effectivePeriod"]["start"]),
+                    row = {"medication": str(jsonfile.get("text")), "start": str(jsonfile["entry"][jsonEntries]["resource"]["effectivePeriod"]["start"]),
                            "quantity": str(jsonfile["entry"][jsonEntries]["resource"]["dosage"][0]["text"])}
                     output.append(row)
                 except:
